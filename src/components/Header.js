@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Box, Container, AppBar, Toolbar, Button, IconButton, Typography } from '@mui/material';
+import { Box, Container, AppBar, Toolbar, Button, IconButton, Typography, Icon } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 // import Button from '@mui/material/Button';
 // import Typography from '@mui/material/Typography';
@@ -10,25 +10,29 @@ import MenuIcon from '@mui/icons-material/Menu';
 class Header extends Component {
     render() {
         return (
-            <Box component="header">
-                <AppBar position="static" color="secondary" elevation={4}>
-                    <Toolbar>
-                        <IconButton
-                            size="large"
-                            edge="start"
-                            color="inherit"
-                            aria-label="menu"
-                            sx={{ mr: 2 }}
-                        >
-                            <MenuIcon />
-                        </IconButton>
-                        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                            News
-                        </Typography>
+
+            <AppBar position="fixed" color="secondary" elevation={4}>
+                <Toolbar>
+                    <IconButton
+                        size="large"
+                        edge="start"
+                        color="inherit"
+                        aria-label="menu"
+                        sx={{ mr: 2 }}
+                    >
+                        <MenuIcon />
+                    </IconButton>
+                    <Box component="img" src="./images/ProSource-White.png" alt="ProSource Payments" sx={{ display: { xs: 'none', md: 'flex' }, height: '40px', mr: 1 }} />
+                    <Typography component="p" sx={{display: { xs: 'flex', md: 'none' }}}>
+                        ProSource Payments
+                    </Typography>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }} paddingX={"1rem"} justifyContent={'end'}>
                         <Button color="inherit">Login</Button>
-                    </Toolbar>
-                </AppBar>
-            </Box>
+                    </Box>
+                    
+                </Toolbar>
+            </AppBar>
+
         );
     }
 }
