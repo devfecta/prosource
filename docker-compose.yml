@@ -1,0 +1,41 @@
+services:
+  devfecta-server:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: Prosource-Server
+    restart: always
+    ports:
+      - "8080:443"
+      #- "443:443"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      # - ./nginx.conf:/etc/nginx/nginx.conf
+      # - ./build:/usr/share/nginx/html
+    #deploy:
+    #  replicas: 2
+    #  update_config:
+    #    parallelism: 2
+    #    delay: 10s
+    #  restart_policy:
+    #    condition: on-failure
+
+    networks:
+      - devfecta-network
+    deploy:
+        resources:
+            limits:
+              cpus: "0.5"
+              memory: 2G
+            reservations:
+              cpus: "0.25"
+              memory: 512M
+
+
+networks:
+  devfecta-network:
+
+#volumes:
+#  devfecta-react-php:
+#  devfecta-mysql:
