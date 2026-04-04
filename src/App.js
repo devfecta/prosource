@@ -21,17 +21,22 @@ function App() {
 		<CssBaseline />
 		
 		<Header />
-			<Box component="main" flexGrow={1}>
-				<Routes>
-					<Route path="/" element={<Home />} />
-					{/* <Route path="/services" element={<Services title={"Services - " + document.title} />} />
-		
-					<Route path="/confirmSubscription" Component={ConfirmSubscription} />
 
-					<Route path="/portfolio/prosource" element={<Portfolio.Prosource technologies={this.state.workExperience.technologies} />} />	 */}
-				</Routes>
-			</Box>		
+		
+
+		<Box component="main" flexGrow={1}>
+			<Routes>
+				<Route path="/" element={<Home />} />
+				{/* <Route path="/services" element={<Services title={"Services - " + document.title} />} />
+	
+				<Route path="/confirmSubscription" Component={ConfirmSubscription} />
+
+				<Route path="/portfolio/prosource" element={<Portfolio.Prosource technologies={this.state.workExperience.technologies} />} />	 */}
+			</Routes>
+		</Box>
+
 		<Footer />
+
 	</Router>
   );
 }
